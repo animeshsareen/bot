@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Activate virtual environment
+source .venv/bin/activate
+
+# Check for poll-only flag
+if [ "$1" = "p" ] || [ "$1" = "-p" ]; then
+    python -m src.bot --poll-only
+else
+    MODE=${1:-live}
+    ASSET=${2:-eth}
+    python -m src.bot "$MODE" --asset "$ASSET"
+fi

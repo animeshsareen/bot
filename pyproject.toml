@@ -1,0 +1,26 @@
+[project]
+name = "auto-bot"
+version = "0.1.0"
+description = ""
+requires-python = ">=3.10"
+dependencies = [
+    "fuzzywuzzy>=0.18.0",
+    "python-Levenshtein>=0.21.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "ruff",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
